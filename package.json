@@ -1,5 +1,5 @@
 {
-	"name": "@omundy/om-functions",
+	"name": "@omundy/om-functions-js",
 	"version": "1.1.0",
 	"description": "Helpers and such",
 	"main": "index.js",
