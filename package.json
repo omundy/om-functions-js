@@ -1,6 +1,6 @@
 {
 	"name": "@omundy/om-functions",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Helpers and such",
 	"main": "index.js",
 	"scripts": {
