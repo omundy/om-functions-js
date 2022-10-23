@@ -1,0 +1,19 @@
+{
+	"esversion": 8,
+	"strict": "implied",
+	"devel": true,
+	"browser": true,
+	"node": true,
+	"indent": 1,
+	"undef": true,
+	"unused": false,
+	"globals": {
+		"CONFIG": false,
+		"globals": false,
+		"$": false,
+		"FS_Object": false,
+		"FS_Number": false
+	},
+	"-W079": false,
+	"-W117": false
+}

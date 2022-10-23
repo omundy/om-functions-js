@@ -1,2 +1,1 @@
-# sneakaway-helpers-js
- 
+# om-functions-js
