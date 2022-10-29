@@ -1,6 +1,40 @@
 # om-functions-js
 
+
+
+
+
+## How to use
+
+
+### As an npm module
+
 https://www.npmjs.com/package/@omundy/om-functions-js
+
+```bash
+npm i @omundy/om-functions-js
+```
+
+
+## Next to your project
+
+```bash
+git clone https://github.com/omundy/om-functions-js.git
+npm i
+```
+
+Then in your project
+
+```js
+var FS_Files =  require('../../../om-functions-js/src/fs-files');
+```
+
+
+
+## As a submodule
+
+??
+
 
 
 
