@@ -10,8 +10,8 @@ const Mod = require('./fs-files.js');
 test('Return an array', async () => {
 	const arr = await Mod.getFilesInDir('./');
 	// console.log(arr);
-	expect([]).toEqual(expect.any(Array)); // passes
-	expect(arr.length).toBeGreaterThanOrEqual(12);
+	expect([]).toEqual(expect.any(Array));
+	expect(arr.length).toBeGreaterThanOrEqual(3); // 4 files in this directory
 });
 
 
