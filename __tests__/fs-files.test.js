@@ -4,11 +4,12 @@
  */
 
 // import module
-const Mod = require('./fs-files.js');
+const Lib = require('../lib/fs-files.js');
+const fse = require('fs-extra');
 
 
 test('Return an array', async () => {
-	const arr = await Mod.getFilesInDir('./');
+	const arr = await Lib.getFilesInDir('./');
 	// console.log(arr);
 	expect([]).toEqual(expect.any(Array));
 	expect(arr.length).toBeGreaterThanOrEqual(3); // 4 files in this directory
@@ -16,10 +17,18 @@ test('Return an array', async () => {
 
 
 test('returns true (ignore)', () => {
-	const val = Mod.ignoredFiles('.');
+	const val = Lib.ignoredFiles('.');
 	expect(val).toEqual(true);
 });
 test('returns false (do not ignore)', () => {
-	const val = Mod.ignoredFiles('package.json');
+	const val = Lib.ignoredFiles('package.json');
 	expect(val).toEqual(false);
 });
+
+
+// test('files copied', async () => {
+// 	await Lib.copyFiles('./input', './output');
+// 	// does the directory exist?
+// 	let fileExists = await fse.pathExists('./output/hello.txt');
+// 	expect(fileExists).toEqual(true);
+// });

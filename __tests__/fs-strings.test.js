@@ -1,24 +1,24 @@
 /**
- *	Import revealing module pattern as ES6 module and test using jest
+ *	Import revealing Libule pattern as ES6 Libule and test using jest
  * 	run: npm test
  */
 
-// import module
-const Mod = require('./fs-strings.js');
+// import Libule
+const Lib = require('../lib/fs-strings.js');
 
 //1.
 
 // adds a leading 0
 test('add leading 0 to string', () => {
 	var string = "123456789";
-	const leadingZero = Mod.pad('0', string.length);
+	const leadingZero = Lib.pad('0', string.length);
 	expect(leadingZero).toBe("000000000");
 });
 
 // adds a leading 0
 test('add leading 0 to string', () => {
 	var string = "1";
-	const leadingZero = Mod.pad('0', string.length);
+	const leadingZero = Lib.pad('0', string.length);
 	expect(leadingZero).toBe("0");
 });
 
@@ -27,14 +27,14 @@ test('add leading 0 to string', () => {
 // checks for vowel
 test('check string for vowel', () => {
 	var string = "banana";
-	const containVowel = Mod.containsVowel(string);
+	const containVowel = Lib.containsVowel(string);
 	expect(containVowel).toBe(true);
 });
 
 // checks for vowel
 test('check string for vowel', () => {
 	var string = "100";
-	const containVowel = Mod.containsVowel(string);
+	const containVowel = Lib.containsVowel(string);
 	expect(containVowel).toBe(false);
 });
 
@@ -43,14 +43,14 @@ test('check string for vowel', () => {
 // upper case first letter of string
 test('upper case first letter of string', () => {
 	var string = "banana";
-	const ucFirst = Mod.ucFirst(string);
+	const ucFirst = Lib.ucFirst(string);
 	expect(ucFirst).toBe("Banana");
 });
 
 // upper case first letter of string
 test('upper case first letter of string', () => {
 	var string = "test";
-	const ucFirst = Mod.ucFirst(string);
+	const ucFirst = Lib.ucFirst(string);
 	expect(ucFirst).toBe("Test");
 });
 
@@ -59,7 +59,7 @@ test('upper case first letter of string', () => {
 // removeHTML
 test('remove html', () => {
 	var string = "<b>banana</b>";
-	let clean = Mod.removeHTML(string).trim();
+	let clean = Lib.removeHTML(string).trim();
 	expect(clean).toEqual(expect.not.stringContaining("<"));
 	expect(clean).toEqual(expect.not.stringContaining(">"));
 	expect(clean).toBe("banana");
@@ -70,14 +70,14 @@ test('remove html', () => {
 // trim str
 test('trim string to certain length', () => {
 	var string = "batman   ";
-	const trimmed = Mod.trimStr(string, 6);
+	const trimmed = Lib.trimStr(string, 6);
 	expect(trimmed).toBe("bat" + "&hellip;");
 });
 
 // trim str
 test('trim string to certain length', () => {
 	var string = "baseball   ";
-	const trimmed = Mod.trimStr(string, 7);
+	const trimmed = Lib.trimStr(string, 7);
 	expect(trimmed).toBe("base" + "&hellip;");
 });
 
@@ -86,14 +86,14 @@ test('trim string to certain length', () => {
 // // clean str
 // test('remove numbers and punctuation from string and lowercase', () => {
 //   var string = "TE@S;T1234:)";
-//   const cleaned = Mod.cleanStringReturnTagArray(string)
+//   const cleaned = Lib.cleanStringReturnTagArray(string)
 // 	expect(cleaned).toBe(["test"]);
 // });
 //
 // // clean str
 // test('remove numbers and punctuation from string and lowercase', () => {
 //   var string = "HEL#LO;,.?W1234O#R23LD";
-//   const cleaned = Mod.cleanStringReturnTagArray(string)
+//   const cleaned = Lib.cleanStringReturnTagArray(string)
 // 	expect(cleaned).toBe(["helloworld"]);
 // });
 
@@ -102,6 +102,6 @@ test('trim string to certain length', () => {
 // remove small words
 test('remove all words smaller than length 3', () => {
 	var strings = ["we", "purchased", "a", "bike"];
-	const removeSmallWords = Mod.removeSmallWords(strings);
+	const removeSmallWords = Lib.removeSmallWords(strings);
 	expect(removeSmallWords).toStrictEqual(["purchased", "bike"]);
 });

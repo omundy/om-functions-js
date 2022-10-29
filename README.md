@@ -12,7 +12,7 @@
 https://www.npmjs.com/package/@omundy/om-functions-js
 
 ```bash
-npm i @omundy/om-functions-js
+npm install @omundy/om-functions-js
 ```
 
 
@@ -20,13 +20,13 @@ npm i @omundy/om-functions-js
 
 ```bash
 git clone https://github.com/omundy/om-functions-js.git
-npm i
+npm install
 ```
 
-Then in your project
+Then import the library you need in your project
 
 ```js
-var FS_Files =  require('../../../om-functions-js/src/fs-files');
+var FS_Files = require("../../../om-functions-js/lib/fs-files");
 ```
 
 
@@ -36,13 +36,6 @@ var FS_Files =  require('../../../om-functions-js/src/fs-files');
 ??
 
 
-
-
-## To do
-
-1. The difference between exports,etc. https://www.tutorialsteacher.com/nodejs/nodejs-module-exports
-1. Confirm this works [across](https://www.google.com/search?q=share+code+between+javascript+in+the+browser+and+node&oq=share+code+between+javascript+in+the+browser+and+node&aqs=chrome..69i57.9653j0j7&sourceid=chrome&ie=UTF-8) browser/extension/node [projects](https://stackoverflow.com/questions/3225251/how-can-i-share-code-between-node-js-and-the-browser)
-1. Incorporate all code from Tally, etc.
 
 
 
@@ -58,6 +51,16 @@ npm test
 ```
 
 
+
+
+## To do
+
+1. The difference between exports,etc. https://www.tutorialsteacher.com/nodejs/nodejs-module-exports
+1. Confirm this works [across](https://www.google.com/search?q=share+code+between+javascript+in+the+browser+and+node&oq=share+code+between+javascript+in+the+browser+and+node&aqs=chrome..69i57.9653j0j7&sourceid=chrome&ie=UTF-8) browser/extension/node [projects](https://stackoverflow.com/questions/3225251/how-can-i-share-code-between-node-js-and-the-browser)
+1. Incorporate all code from Tally, etc.
+
+
+
 ## Tutorials
 
 1. Create an NPM package
@@ -67,3 +70,4 @@ npm test
 	1. [Automate npm publishing with GitHub Actions](https://superface.ai/blog/npm-publish-gh-actions-changelog)
 1. Setup testing
 	1. https://www.robinwieruch.de/node-js-jest/
+1. [Lib vs. Src folder](https://stackoverflow.com/questions/38426078/why-use-lib-vs-src-directory-names-in-javascript-which-is-standard)
