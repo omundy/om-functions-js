@@ -60,7 +60,10 @@ npm test
 
 ## Tutorials
 
-- NPM docs [creating](https://docs.npmjs.com/creating-node-js-modules) and [version](https://docs.npmjs.com/updating-your-published-package-version-number)
-- [How to make a beautiful, tiny npm package and publish it](https://www.freecodecamp.org/news/how-to-make-a-beautiful-tiny-npm-package-and-publish-it-2881d4307f78/)
-- [Best practices for creating a modern npm package](https://snyk.io/blog/best-practices-create-modern-npm-package/)
-- [Automate npm publishing with GitHub Actions](https://superface.ai/blog/npm-publish-gh-actions-changelog)
+1. Create an NPM package
+	1. NPM docs [creating](https://docs.npmjs.com/creating-node-js-modules) and [version](https://docs.npmjs.com/updating-your-published-package-version-number)
+	1. [How to make a beautiful, tiny npm package and publish it](https://www.freecodecamp.org/news/how-to-make-a-beautiful-tiny-npm-package-and-publish-it-2881d4307f78/)
+	1. [Best practices for creating a modern npm package](https://snyk.io/blog/best-practices-create-modern-npm-package/)
+	1. [Automate npm publishing with GitHub Actions](https://superface.ai/blog/npm-publish-gh-actions-changelog)
+1. Setup testing
+	1. https://www.robinwieruch.de/node-js-jest/

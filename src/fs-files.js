@@ -1,12 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-
-
+const fse = require('fs-extra');
 
 var exports = module.exports = {};
 
 exports.getFilesInDir = getFilesInDir;
 exports.ignoredFiles = ignoredFiles;
+exports.copyFiles = copyFiles;
 
 
 
@@ -19,6 +19,10 @@ async function getFilesInDir(dirPath) {
 	// console.log(dirPath);
 	let arr = [];
 
+	// does the directory exist?
+	let fileExists = await fse.pathExists(dirPath);
+	if (!fileExists) return;
+
 	// read files in directory
 	await fs.readdir(dirPath).then(files => {
 		// console.log(files.length, files);
@@ -28,11 +32,12 @@ async function getFilesInDir(dirPath) {
 			// console.log(dirPath + file);
 			arr.push(file);
 		});
-	}).catch(err => console.error("ERROR in getFilesInDir()", err));
-	// console.log(arr);
+	}).catch(err => {
+		console.error("ERROR in getFilesInDir()", err);
+	});
 	return arr;
 }
-// getFilesInDir("./");
+// console.log(getFilesInDir("./"));
 
 
 /**
@@ -46,3 +51,26 @@ function ignoredFiles(str, add) {
 	// default
 	return false;
 }
+
+
+/**
+ *	Copy all files @ inputPath to outputPath
+ *	- Will create all directories required to build new path
+ */
+async function copyFiles(inputPath, outputPath) {
+	await fse.copy(inputPath, outputPath, {
+		filter: filterFunc
+	}, err => {
+		if (err) return console.error(err);
+		console.log('copyFiles() success!');
+	});
+}
+// will run if filter returns true
+// https://github.com/jprichardson/node-fs-extra/blob/master/docs/copy.md
+const filterFunc = (src, dest) => {
+	return true;
+};
+copyFiles(
+	'/Volumes/GoogleDrive/My\ Drive/Art\ \(Dietrick\ Studio\)/_Artwork\ Process/Chasing\ the\ Sun/Artwork/UTC-ORIGINALS/00-00/02/house/SVG',
+	'/Users/joelledietrick/Documents/Github/svg-randomizer/tests/sample-svg-input/UTC-ORIGINALS/00-00/02/house/SVG'
+);
