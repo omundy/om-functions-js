@@ -6,24 +6,51 @@
 // import module
 const Lib = require('../lib/fs-files.js');
 const fse = require('fs-extra');
+const rootDir = "./";
+const testDir = `${rootDir}__tests__`;
 
 
-test('Return an array', async () => {
-	const arr = await Lib.getFilesInDir('./');
+//////////////////////////////////
+///////// getFilesInDir() ////////
+//////////////////////////////////
+
+test('return an array of filenames', async () => {
+	const arr = await Lib.getFilesInDir(rootDir);
 	// console.log(arr);
-	expect([]).toEqual(expect.any(Array));
-	expect(arr.length).toBeGreaterThanOrEqual(3); // 4 files in this directory
+	expect(arr).toEqual(expect.any(Array));
+	// 4 files in this directory
+	expect(arr.length).toBeGreaterThanOrEqual(3);
+});
+test('return files only', async () => {
+	const arr = await Lib.getFilesInDir(`${testDir}/input`, ["files"]);
+	expect(arr.length).toBe(1);
+});
+test('return TXT files only', async () => {
+	const arr = await Lib.getFilesInDir(`${testDir}/input`, ["files", "fileExts", ".txt"]);
+	expect(arr.length).toBe(1);
+});
+test('return folders only', async () => {
+	const arr = await Lib.getFilesInDir(`${testDir}`, ["folders"]);
+	expect(arr.length).toBe(2);
 });
 
 
+//////////////////////////////////
+///////// isHiddenFile() /////////
+//////////////////////////////////
+
 test('returns true (ignore)', () => {
-	const val = Lib.ignoredFiles('.');
+	const val = Lib.isHiddenFile('.');
 	expect(val).toEqual(true);
 });
 test('returns false (do not ignore)', () => {
-	const val = Lib.ignoredFiles('package.json');
+	const val = Lib.isHiddenFile('package.json');
 	expect(val).toEqual(false);
 });
+
+
+
+
 
 
 // test('files copied', async () => {
