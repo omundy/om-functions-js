@@ -8,6 +8,7 @@ const Lib = require('../lib/fs-files.js');
 const fse = require('fs-extra');
 const rootDir = "./";
 const testDir = `${rootDir}__tests__`;
+const bogusDir = `${rootDir}FOOOOOOO`;
 
 
 //////////////////////////////////
@@ -20,6 +21,13 @@ test('return an array of filenames', async () => {
 	expect(arr).toEqual(expect.any(Array));
 	// 4 files in this directory
 	expect(arr.length).toBeGreaterThanOrEqual(3);
+});
+test('return an error message', async () => {
+	try {
+		const arr = await Lib.getFilesInDir(bogusDir);
+	} catch (e) {
+		expect(e.message).toBe("PATH DOES NOT EXIST");
+	}
 });
 test('return files only', async () => {
 	const arr = await Lib.getFilesInDir(`${testDir}/input`, ["files"]);
