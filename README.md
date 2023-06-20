@@ -7,7 +7,7 @@
 ## How to use
 
 
-### As an npm module
+##### As an npm module
 
 https://www.npmjs.com/package/@omundy/om-functions-js
 
@@ -16,7 +16,7 @@ npm install @omundy/om-functions-js
 ```
 
 
-## Next to your project
+##### Next to your project
 
 ```bash
 git clone https://github.com/omundy/om-functions-js.git
@@ -31,7 +31,7 @@ var FS_Files = require("../../../om-functions-js/lib/fs-files");
 
 
 
-## As a submodule
+##### As a submodule
 
 ??
 
